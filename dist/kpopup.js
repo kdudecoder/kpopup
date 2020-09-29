@@ -1,6 +1,6 @@
 ! function ()
 {
-	exports.kpopup = function ()
+	this.kpopup = function ()
 	{
 		arguments[0] && "object" == typeof arguments[0] && (this.options = function (n, e)
 		{
@@ -9,6 +9,7 @@
 				return n
 		}(
 		{
+			windowTitle: "",
 			target: "",
 			payload: {},
 			width: 414,
@@ -34,7 +35,8 @@
 		o = height / 2 - 320 + t,
 		w = this.options.width,
 		h = this.options.height,
-		r = window.open(n, "Cashkumar Loan Application", "scrollbars=yes,width="+w+",height="+h+",top="+o+",left="+i);
+		wt = this.options.windowTitle,
+		r = window.open(n,wt,"scrollbars=yes,width="+w+",height="+h+",top="+o+",left="+i);
 		window.focus && r.focus()
 	}
 }();

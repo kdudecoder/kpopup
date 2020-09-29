@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<head>
+	<title></title>
+</head>
+<body>
+	<button id="ytPopupBtn">Open Youtube Video</button>
+	<button id="azPopupBtn">Open Amazon Affiliate Page</button>
+	<script type="text/javascript" src="dist/kpopup.min.js"></script>
+
+	<script type="text/javascript">
+		var youtubeOptions = {
+			"target": "https://www.youtube.com/watch",
+			"payload": {              
+				v: 'TxbE79-1OSI',
+				autoplay: 1
+			},
+			width: 460,
+			height: 614
+		}
+		var amazonOptions = {
+			"target": "https://www.amazon.in/Apple-iPhone-Pro-Max-64GB/dp/B07XVLMZHH/",
+			"payload": {
+				tag: 'my-tag21'
+			}
+		}
+		var youtubePopup = new kpopup(youtubeOptions);
+		var amazonPopup = new kpopup(amazonOptions);
+		document.getElementById('ytPopupBtn').onclick = function (e) {
+			youtubePopup.open();
+			e.preventDefault();
+		}
+		document.getElementById('azPopupBtn').onclick = function (e) {
+			amazonPopup.open();
+			e.preventDefault();
+		}
+	</script>
+</body>
+</html>
